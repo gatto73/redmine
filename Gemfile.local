@@ -1,0 +1,9 @@
+# -*- mode: ruby;-*-
+
+group :development do
+  gem 'solargraph'
+  gem 'sorbet'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'debug'
+end

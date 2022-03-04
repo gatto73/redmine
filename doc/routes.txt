@@ -1,0 +1,2015 @@
+--[ Route 1 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | home
+Verb              | GET
+URI               | /
+Controller#Action | welcome#index
+--[ Route 2 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | signin
+Verb              | GET|POST
+URI               | /login(.:format)
+Controller#Action | account#login
+--[ Route 3 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | signout
+Verb              | GET|POST
+URI               | /logout(.:format)
+Controller#Action | account#logout
+--[ Route 4 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | account_twofa_confirm
+Verb              | GET
+URI               | /account/twofa/confirm(.:format)
+Controller#Action | account#twofa_confirm
+--[ Route 5 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | account_twofa_resend
+Verb              | POST
+URI               | /account/twofa/resend(.:format)
+Controller#Action | account#twofa_resend
+--[ Route 6 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | account_twofa
+Verb              | GET|POST
+URI               | /account/twofa(.:format)
+Controller#Action | account#twofa
+--[ Route 7 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | register
+Verb              | GET|POST
+URI               | /account/register(.:format)
+Controller#Action | account#register
+--[ Route 8 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | lost_password
+Verb              | GET|POST
+URI               | /account/lost_password(.:format)
+Controller#Action | account#lost_password
+--[ Route 9 ]-------------------------------------------------------------------------------------------------------------------------------
+Prefix            | account_activate
+Verb              | GET
+URI               | /account/activate(.:format)
+Controller#Action | account#activate
+--[ Route 10 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | activation_email
+Verb              | GET
+URI               | /account/activation_email(.:format)
+Controller#Action | account#activation_email
+--[ Route 11 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | preview_news
+Verb              | GET|POST|PUT|PATCH
+URI               | /news/preview(.:format)
+Controller#Action | previews#news
+--[ Route 12 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | preview_issue
+Verb              | GET|POST|PUT|PATCH
+URI               | /issues/preview(.:format)
+Controller#Action | previews#issue
+--[ Route 13 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | preview_text
+Verb              | GET|POST|PUT|PATCH
+URI               | /preview/text(.:format)
+Controller#Action | previews#text
+--[ Route 14 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET|POST
+URI               | /projects/:id/wiki/destroy(.:format)
+Controller#Action | wikis#destroy
+--[ Route 15 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_board_message
+Verb              | GET|POST
+URI               | /boards/:board_id/topics/new(.:format)
+Controller#Action | messages#new
+--[ Route 16 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | board_message
+Verb              | GET
+URI               | /boards/:board_id/topics/:id(.:format)
+Controller#Action | messages#show
+--[ Route 17 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET|POST
+URI               | /boards/:board_id/topics/quote/:id(.:format)
+Controller#Action | messages#quote
+--[ Route 18 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /boards/:board_id/topics/:id/edit(.:format)
+Controller#Action | messages#edit
+--[ Route 19 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | preview_board_message
+Verb              | POST
+URI               | /boards/:board_id/topics/preview(.:format)
+Controller#Action | messages#preview
+--[ Route 20 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /boards/:board_id/topics/:id/replies(.:format)
+Controller#Action | messages#reply
+--[ Route 21 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /boards/:board_id/topics/:id/edit(.:format)
+Controller#Action | messages#edit
+--[ Route 22 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /boards/:board_id/topics/:id/destroy(.:format)
+Controller#Action | messages#destroy
+--[ Route 23 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | auto_complete_issues
+Verb              | GET
+URI               | /issues/auto_complete(.:format)
+Controller#Action | auto_completes#issues
+--[ Route 24 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | auto_complete_wiki_pages
+Verb              | GET
+URI               | /wiki_pages/auto_complete(.:format)
+Controller#Action | auto_completes#wiki_pages
+--[ Route 25 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | issues_context_menu
+Verb              | GET|POST
+URI               | /issues/context_menu(.:format)
+Controller#Action | context_menus#issues
+--[ Route 26 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | issue_changes
+Verb              | GET
+URI               | /issues/changes(.:format)
+Controller#Action | journals#index
+--[ Route 27 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | quoted_issue
+Verb              | POST
+URI               | /issues/:id/quoted(.:format)
+Controller#Action | journals#new {:id=>/\d+/}
+--[ Route 28 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | diff_journal
+Verb              | GET
+URI               | /journals/:id/diff(.:format)
+Controller#Action | journals#diff
+--[ Route 29 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_journal
+Verb              | GET
+URI               | /journals/:id/edit(.:format)
+Controller#Action | journals#edit
+--[ Route 30 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | journal
+Verb              | PATCH
+URI               | /journals/:id(.:format)
+Controller#Action | journals#update
+--[ Route 31 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /journals/:id(.:format)
+Controller#Action | journals#update
+--[ Route 32 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_gantt
+Verb              | GET
+URI               | /projects/:project_id/issues/gantt(.:format)
+Controller#Action | gantts#show
+--[ Route 33 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | issues_gantt
+Verb              | GET
+URI               | /issues/gantt(.:format)
+Controller#Action | gantts#show
+--[ Route 34 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_calendar
+Verb              | GET
+URI               | /projects/:project_id/issues/calendar(.:format)
+Controller#Action | calendars#show
+--[ Route 35 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | issues_calendar
+Verb              | GET
+URI               | /issues/calendar(.:format)
+Controller#Action | calendars#show
+--[ Route 36 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_issues_report
+Verb              | GET
+URI               | /projects/:id/issues/report(.:format)
+Controller#Action | reports#issue_report
+--[ Route 37 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_issues_report_details
+Verb              | GET
+URI               | /projects/:id/issues/report/:detail(.:format)
+Controller#Action | reports#issue_report_details
+--[ Route 38 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_issues_import
+Verb              | GET
+URI               | /issues/imports/new(.:format)
+Controller#Action | imports#new {:type=>"IssueImport"}
+--[ Route 39 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_time_entries_import
+Verb              | GET
+URI               | /time_entries/imports/new(.:format)
+Controller#Action | imports#new {:type=>"TimeEntryImport"}
+--[ Route 40 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_users_import
+Verb              | GET
+URI               | /users/imports/new(.:format)
+Controller#Action | imports#new {:type=>"UserImport"}
+--[ Route 41 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | imports
+Verb              | POST
+URI               | /imports(.:format)
+Controller#Action | imports#create
+--[ Route 42 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | import
+Verb              | GET
+URI               | /imports/:id(.:format)
+Controller#Action | imports#show
+--[ Route 43 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | import_settings
+Verb              | GET|POST
+URI               | /imports/:id/settings(.:format)
+Controller#Action | imports#settings
+--[ Route 44 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | import_mapping
+Verb              | GET|POST
+URI               | /imports/:id/mapping(.:format)
+Controller#Action | imports#mapping
+--[ Route 45 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | import_run
+Verb              | GET|POST
+URI               | /imports/:id/run(.:format)
+Controller#Action | imports#run
+--[ Route 46 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_account
+Verb              | GET|PUT
+URI               | /my/account(.:format)
+Controller#Action | my#account
+--[ Route 47 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | delete_my_account
+Verb              | GET|POST
+URI               | /my/account/destroy(.:format)
+Controller#Action | my#destroy
+--[ Route 48 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_page
+Verb              | GET
+URI               | /my/page(.:format)
+Controller#Action | my#page
+--[ Route 49 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /my/page(.:format)
+Controller#Action | my#update_page
+--[ Route 50 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my
+Verb              | GET
+URI               | /my(.:format)
+Controller#Action | my#index
+--[ Route 51 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_api_key
+Verb              | GET
+URI               | /my/api_key(.:format)
+Controller#Action | my#show_api_key
+--[ Route 52 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /my/api_key(.:format)
+Controller#Action | my#reset_api_key
+--[ Route 53 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_rss_key
+Verb              | POST
+URI               | /my/rss_key(.:format)
+Controller#Action | my#reset_rss_key
+--[ Route 54 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_password
+Verb              | GET|POST
+URI               | /my/password(.:format)
+Controller#Action | my#password
+--[ Route 55 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_add_block
+Verb              | POST
+URI               | /my/add_block(.:format)
+Controller#Action | my#add_block
+--[ Route 56 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_remove_block
+Verb              | POST
+URI               | /my/remove_block(.:format)
+Controller#Action | my#remove_block
+--[ Route 57 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_order_blocks
+Verb              | POST
+URI               | /my/order_blocks(.:format)
+Controller#Action | my#order_blocks
+--[ Route 58 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_twofa_activate_init
+Verb              | POST
+URI               | /my/twofa/activate/init(.:format)
+Controller#Action | twofa#activate_init
+--[ Route 59 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /my/twofa/:scheme/activate/init(.:format)
+Controller#Action | twofa#activate_init
+--[ Route 60 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /my/twofa/:scheme/activate/confirm(.:format)
+Controller#Action | twofa#activate_confirm
+--[ Route 61 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET|POST
+URI               | /my/twofa/:scheme/activate(.:format)
+Controller#Action | twofa#activate
+--[ Route 62 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /my/twofa/:scheme/deactivate/init(.:format)
+Controller#Action | twofa#deactivate_init
+--[ Route 63 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /my/twofa/:scheme/deactivate/confirm(.:format)
+Controller#Action | twofa#deactivate_confirm
+--[ Route 64 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET|POST
+URI               | /my/twofa/:scheme/deactivate(.:format)
+Controller#Action | twofa#deactivate
+--[ Route 65 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_twofa_select_scheme
+Verb              | GET
+URI               | /my/twofa/select_scheme(.:format)
+Controller#Action | twofa#select_scheme
+--[ Route 66 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_twofa_backup_codes_init
+Verb              | POST
+URI               | /my/twofa/backup_codes/init(.:format)
+Controller#Action | twofa_backup_codes#init
+--[ Route 67 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_twofa_backup_codes_confirm
+Verb              | GET
+URI               | /my/twofa/backup_codes/confirm(.:format)
+Controller#Action | twofa_backup_codes#confirm
+--[ Route 68 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_twofa_backup_codes_create
+Verb              | GET|POST
+URI               | /my/twofa/backup_codes/create(.:format)
+Controller#Action | twofa_backup_codes#create
+--[ Route 69 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | my_twofa_backup_codes
+Verb              | GET
+URI               | /my/twofa/backup_codes(.:format)
+Controller#Action | twofa_backup_codes#show
+--[ Route 70 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /users/:user_id/twofa/deactivate(.:format)
+Controller#Action | twofa#admin_deactivate
+--[ Route 71 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | user_memberships
+Verb              | GET
+URI               | /users/:user_id/memberships(.:format)
+Controller#Action | principal_memberships#index
+--[ Route 72 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /users/:user_id/memberships(.:format)
+Controller#Action | principal_memberships#create
+--[ Route 73 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_user_membership
+Verb              | GET
+URI               | /users/:user_id/memberships/new(.:format)
+Controller#Action | principal_memberships#new
+--[ Route 74 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_user_membership
+Verb              | GET
+URI               | /users/:user_id/memberships/:id/edit(.:format)
+Controller#Action | principal_memberships#edit
+--[ Route 75 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | user_membership
+Verb              | GET
+URI               | /users/:user_id/memberships/:id(.:format)
+Controller#Action | principal_memberships#show
+--[ Route 76 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /users/:user_id/memberships/:id(.:format)
+Controller#Action | principal_memberships#update
+--[ Route 77 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /users/:user_id/memberships/:id(.:format)
+Controller#Action | principal_memberships#update
+--[ Route 78 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /users/:user_id/memberships/:id(.:format)
+Controller#Action | principal_memberships#destroy
+--[ Route 79 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | user_email_addresses
+Verb              | GET
+URI               | /users/:user_id/email_addresses(.:format)
+Controller#Action | email_addresses#index
+--[ Route 80 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /users/:user_id/email_addresses(.:format)
+Controller#Action | email_addresses#create
+--[ Route 81 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | user_email_address
+Verb              | PATCH
+URI               | /users/:user_id/email_addresses/:id(.:format)
+Controller#Action | email_addresses#update
+--[ Route 82 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /users/:user_id/email_addresses/:id(.:format)
+Controller#Action | email_addresses#update
+--[ Route 83 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /users/:user_id/email_addresses/:id(.:format)
+Controller#Action | email_addresses#destroy
+--[ Route 84 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | users
+Verb              | GET
+URI               | /users(.:format)
+Controller#Action | users#index
+--[ Route 85 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /users(.:format)
+Controller#Action | users#create
+--[ Route 86 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_user
+Verb              | GET
+URI               | /users/new(.:format)
+Controller#Action | users#new
+--[ Route 87 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_user
+Verb              | GET
+URI               | /users/:id/edit(.:format)
+Controller#Action | users#edit
+--[ Route 88 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | user
+Verb              | GET
+URI               | /users/:id(.:format)
+Controller#Action | users#show
+--[ Route 89 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /users/:id(.:format)
+Controller#Action | users#update
+--[ Route 90 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /users/:id(.:format)
+Controller#Action | users#update
+--[ Route 91 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /users/:id(.:format)
+Controller#Action | users#destroy
+--[ Route 92 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | watch
+Verb              | POST
+URI               | /watchers/watch(.:format)
+Controller#Action | watchers#watch
+--[ Route 93 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | watchers_watch
+Verb              | DELETE
+URI               | /watchers/watch(.:format)
+Controller#Action | watchers#unwatch
+--[ Route 94 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_watchers
+Verb              | GET
+URI               | /watchers/new(.:format)
+Controller#Action | watchers#new
+--[ Route 95 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | watchers
+Verb              | POST
+URI               | /watchers(.:format)
+Controller#Action | watchers#create
+--[ Route 96 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | watchers_append
+Verb              | POST
+URI               | /watchers/append(.:format)
+Controller#Action | watchers#append
+--[ Route 97 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /watchers(.:format)
+Controller#Action | watchers#destroy
+--[ Route 98 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | watchers_autocomplete_for_mention
+Verb              | GET
+URI               | /watchers/autocomplete_for_mention(.:format)
+Controller#Action | watchers#autocomplete_for_mention
+--[ Route 99 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | watchers_autocomplete_for_user
+Verb              | GET
+URI               | /watchers/autocomplete_for_user(.:format)
+Controller#Action | watchers#autocomplete_for_user
+--[ Route 100 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /issues/:object_id/watchers(.:format)
+Controller#Action | watchers#create {:object_type=>"issue"}
+--[ Route 101 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /issues/:object_id/watchers/:user_id(.:format)
+Controller#Action | watchers#destroy {:object_type=>"issue"}
+--[ Route 102 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | autocomplete_projects
+Verb              | GET
+URI               | /projects/autocomplete(.:format)
+Controller#Action | projects#autocomplete
+--[ Route 103 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | settings_project
+Verb              | GET
+URI               | /projects/:id/settings(/:tab)(.:format)
+Controller#Action | projects#settings
+--[ Route 104 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | archive_project
+Verb              | POST|PUT
+URI               | /projects/:id/archive(.:format)
+Controller#Action | projects#archive
+--[ Route 105 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | unarchive_project
+Verb              | POST|PUT
+URI               | /projects/:id/unarchive(.:format)
+Controller#Action | projects#unarchive
+--[ Route 106 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | close_project
+Verb              | POST|PUT
+URI               | /projects/:id/close(.:format)
+Controller#Action | projects#close
+--[ Route 107 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | reopen_project
+Verb              | POST|PUT
+URI               | /projects/:id/reopen(.:format)
+Controller#Action | projects#reopen
+--[ Route 108 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | copy_project
+Verb              | GET|POST
+URI               | /projects/:id/copy(.:format)
+Controller#Action | projects#copy
+--[ Route 109 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | bookmark_project
+Verb              | DELETE|POST
+URI               | /projects/:id/bookmark(.:format)
+Controller#Action | projects#bookmark
+--[ Route 110 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | autocomplete_project_memberships
+Verb              | GET
+URI               | /projects/:project_id/memberships/autocomplete(.:format)
+Controller#Action | members#autocomplete
+--[ Route 111 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_memberships
+Verb              | GET
+URI               | /projects/:project_id/memberships(.:format)
+Controller#Action | members#index
+--[ Route 112 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/memberships(.:format)
+Controller#Action | members#create
+--[ Route 113 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_membership
+Verb              | GET
+URI               | /projects/:project_id/memberships/new(.:format)
+Controller#Action | members#new
+--[ Route 114 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_membership
+Verb              | GET
+URI               | /memberships/:id/edit(.:format)
+Controller#Action | members#edit
+--[ Route 115 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | membership
+Verb              | GET
+URI               | /memberships/:id(.:format)
+Controller#Action | members#show
+--[ Route 116 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /memberships/:id(.:format)
+Controller#Action | members#update
+--[ Route 117 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /memberships/:id(.:format)
+Controller#Action | members#update
+--[ Route 118 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /memberships/:id(.:format)
+Controller#Action | members#destroy
+--[ Route 119 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_enumerations
+Verb              | PATCH
+URI               | /projects/:project_id/enumerations(.:format)
+Controller#Action | project_enumerations#update
+--[ Route 120 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /projects/:project_id/enumerations(.:format)
+Controller#Action | project_enumerations#update
+--[ Route 121 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /projects/:project_id/enumerations(.:format)
+Controller#Action | project_enumerations#destroy
+--[ Route 122 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_copy_issue
+Verb              | GET
+URI               | /projects/:project_id/issues/:copy_from/copy(.:format)
+Controller#Action | issues#new
+--[ Route 123 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_issues
+Verb              | GET
+URI               | /projects/:project_id/issues(.:format)
+Controller#Action | issues#index
+--[ Route 124 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/issues(.:format)
+Controller#Action | issues#create
+--[ Route 125 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_issue
+Verb              | GET
+URI               | /projects/:project_id/issues/new(.:format)
+Controller#Action | issues#new
+--[ Route 126 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_issues_new
+Verb              | POST
+URI               | /projects/:project_id/issues/new(.:format)
+Controller#Action | issues#new
+--[ Route 127 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_files
+Verb              | GET
+URI               | /projects/:project_id/files(.:format)
+Controller#Action | files#index
+--[ Route 128 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/files(.:format)
+Controller#Action | files#create
+--[ Route 129 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_file
+Verb              | GET
+URI               | /projects/:project_id/files/new(.:format)
+Controller#Action | files#new
+--[ Route 130 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | close_completed_project_versions
+Verb              | PUT
+URI               | /projects/:project_id/versions/close_completed(.:format)
+Controller#Action | versions#close_completed
+--[ Route 131 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_versions
+Verb              | POST
+URI               | /projects/:project_id/versions(.:format)
+Controller#Action | versions#create
+--[ Route 132 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_version
+Verb              | GET
+URI               | /projects/:project_id/versions/new(.:format)
+Controller#Action | versions#new
+--[ Route 133 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:project_id/versions.:format
+Controller#Action | versions#index
+--[ Route 134 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_roadmap
+Verb              | GET
+URI               | /projects/:project_id/roadmap
+Controller#Action | versions#index
+--[ Route 135 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:project_id/versions(.:format)
+Controller#Action | versions#index
+--[ Route 136 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_news_index
+Verb              | GET
+URI               | /projects/:project_id/news(.:format)
+Controller#Action | news#index
+--[ Route 137 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/news(.:format)
+Controller#Action | news#create
+--[ Route 138 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_news
+Verb              | GET
+URI               | /projects/:project_id/news/new(.:format)
+Controller#Action | news#new
+--[ Route 139 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | report_project_time_entries
+Verb              | GET
+URI               | /projects/:project_id/time_entries/report(.:format)
+Controller#Action | timelog#report
+--[ Route 140 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_time_entries
+Verb              | GET
+URI               | /projects/:project_id/time_entries(.:format)
+Controller#Action | timelog#index
+--[ Route 141 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/time_entries(.:format)
+Controller#Action | timelog#create
+--[ Route 142 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_time_entry
+Verb              | GET
+URI               | /projects/:project_id/time_entries/new(.:format)
+Controller#Action | timelog#new
+--[ Route 143 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_queries
+Verb              | POST
+URI               | /projects/:project_id/queries(.:format)
+Controller#Action | queries#create
+--[ Route 144 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_query
+Verb              | GET
+URI               | /projects/:project_id/queries/new(.:format)
+Controller#Action | queries#new
+--[ Route 145 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_issue_categories
+Verb              | GET
+URI               | /projects/:project_id/issue_categories(.:format)
+Controller#Action | issue_categories#index
+--[ Route 146 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/issue_categories(.:format)
+Controller#Action | issue_categories#create
+--[ Route 147 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_issue_category
+Verb              | GET
+URI               | /projects/:project_id/issue_categories/new(.:format)
+Controller#Action | issue_categories#new
+--[ Route 148 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_issue_category
+Verb              | GET
+URI               | /issue_categories/:id/edit(.:format)
+Controller#Action | issue_categories#edit
+--[ Route 149 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | issue_category
+Verb              | GET
+URI               | /issue_categories/:id(.:format)
+Controller#Action | issue_categories#show
+--[ Route 150 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /issue_categories/:id(.:format)
+Controller#Action | issue_categories#update
+--[ Route 151 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /issue_categories/:id(.:format)
+Controller#Action | issue_categories#update
+--[ Route 152 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /issue_categories/:id(.:format)
+Controller#Action | issue_categories#destroy
+--[ Route 153 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_documents
+Verb              | GET
+URI               | /projects/:project_id/documents(.:format)
+Controller#Action | documents#index
+--[ Route 154 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/documents(.:format)
+Controller#Action | documents#create
+--[ Route 155 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_document
+Verb              | GET
+URI               | /projects/:project_id/documents/new(.:format)
+Controller#Action | documents#new
+--[ Route 156 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_boards
+Verb              | GET
+URI               | /projects/:project_id/boards(.:format)
+Controller#Action | boards#index
+--[ Route 157 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/boards(.:format)
+Controller#Action | boards#create
+--[ Route 158 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_board
+Verb              | GET
+URI               | /projects/:project_id/boards/new(.:format)
+Controller#Action | boards#new
+--[ Route 159 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_project_board
+Verb              | GET
+URI               | /projects/:project_id/boards/:id/edit(.:format)
+Controller#Action | boards#edit
+--[ Route 160 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_board
+Verb              | GET
+URI               | /projects/:project_id/boards/:id(.:format)
+Controller#Action | boards#show
+--[ Route 161 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /projects/:project_id/boards/:id(.:format)
+Controller#Action | boards#update
+--[ Route 162 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /projects/:project_id/boards/:id(.:format)
+Controller#Action | boards#update
+--[ Route 163 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /projects/:project_id/boards/:id(.:format)
+Controller#Action | boards#destroy
+--[ Route 164 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | committers_repository
+Verb              | GET|POST
+URI               | /repositories/:id/committers(.:format)
+Controller#Action | repositories#committers
+--[ Route 165 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_repositories
+Verb              | POST
+URI               | /projects/:project_id/repositories(.:format)
+Controller#Action | repositories#create
+--[ Route 166 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_repository
+Verb              | GET
+URI               | /projects/:project_id/repositories/new(.:format)
+Controller#Action | repositories#new
+--[ Route 167 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_repository
+Verb              | GET
+URI               | /repositories/:id/edit(.:format)
+Controller#Action | repositories#edit
+--[ Route 168 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | repository
+Verb              | PATCH
+URI               | /repositories/:id(.:format)
+Controller#Action | repositories#update
+--[ Route 169 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /repositories/:id(.:format)
+Controller#Action | repositories#update
+--[ Route 170 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /repositories/:id(.:format)
+Controller#Action | repositories#destroy
+--[ Route 171 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_wiki_index
+Verb              | GET
+URI               | /projects/:project_id/wiki/index(.:format)
+Controller#Action | wiki#index
+--[ Route 172 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rename_project_wiki_page
+Verb              | GET
+URI               | /projects/:project_id/wiki/:id/rename(.:format)
+Controller#Action | wiki#rename
+--[ Route 173 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:project_id/wiki/:id/rename(.:format)
+Controller#Action | wiki#rename
+--[ Route 174 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | history_project_wiki_page
+Verb              | GET
+URI               | /projects/:project_id/wiki/:id/history(.:format)
+Controller#Action | wiki#history
+--[ Route 175 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | diff_project_wiki_page
+Verb              | GET
+URI               | /projects/:project_id/wiki/:id/diff(.:format)
+Controller#Action | wiki#diff
+--[ Route 176 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | preview_project_wiki_page
+Verb              | POST|PUT|PATCH
+URI               | /projects/:project_id/wiki/:id/preview(.:format)
+Controller#Action | wiki#preview
+--[ Route 177 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | protect_project_wiki_page
+Verb              | POST
+URI               | /projects/:project_id/wiki/:id/protect(.:format)
+Controller#Action | wiki#protect
+--[ Route 178 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | add_attachment_project_wiki_page
+Verb              | POST
+URI               | /projects/:project_id/wiki/:id/add_attachment(.:format)
+Controller#Action | wiki#add_attachment
+--[ Route 179 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | export_project_wiki_page_index
+Verb              | GET
+URI               | /projects/:project_id/wiki/export(.:format)
+Controller#Action | wiki#export
+--[ Route 180 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | date_index_project_wiki_page_index
+Verb              | GET
+URI               | /projects/:project_id/wiki/date_index(.:format)
+Controller#Action | wiki#date_index
+--[ Route 181 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_wiki_page_index
+Verb              | POST
+URI               | /projects/:project_id/wiki/new(.:format)
+Controller#Action | wiki#new
+--[ Route 182 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project_wiki_page
+Verb              | GET
+URI               | /projects/:project_id/wiki/new(.:format)
+Controller#Action | wiki#new
+--[ Route 183 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_project_wiki_page
+Verb              | GET
+URI               | /projects/:project_id/wiki/:id/edit(.:format)
+Controller#Action | wiki#edit
+--[ Route 184 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_wiki_page
+Verb              | GET
+URI               | /projects/:project_id/wiki/:id(.:format)
+Controller#Action | wiki#show
+--[ Route 185 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /projects/:project_id/wiki/:id(.:format)
+Controller#Action | wiki#update
+--[ Route 186 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /projects/:project_id/wiki/:id(.:format)
+Controller#Action | wiki#update
+--[ Route 187 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /projects/:project_id/wiki/:id(.:format)
+Controller#Action | wiki#destroy
+--[ Route 188 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_wiki
+Verb              | GET
+URI               | /projects/:project_id/wiki(.:format)
+Controller#Action | wiki#show
+--[ Route 189 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:project_id/wiki/:id/:version(.:format)
+Controller#Action | wiki#show {:version=>/\d+/}
+--[ Route 190 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /projects/:project_id/wiki/:id/:version(.:format)
+Controller#Action | wiki#destroy_version
+--[ Route 191 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:project_id/wiki/:id/:version/annotate(.:format)
+Controller#Action | wiki#annotate
+--[ Route 192 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:project_id/wiki/:id/:version/diff(.:format)
+Controller#Action | wiki#diff
+--[ Route 193 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | projects
+Verb              | GET
+URI               | /projects(.:format)
+Controller#Action | projects#index
+--[ Route 194 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects(.:format)
+Controller#Action | projects#create
+--[ Route 195 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_project
+Verb              | GET
+URI               | /projects/new(.:format)
+Controller#Action | projects#new
+--[ Route 196 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_project
+Verb              | GET
+URI               | /projects/:id/edit(.:format)
+Controller#Action | projects#edit
+--[ Route 197 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project
+Verb              | GET
+URI               | /projects/:id(.:format)
+Controller#Action | projects#show
+--[ Route 198 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /projects/:id(.:format)
+Controller#Action | projects#update
+--[ Route 199 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /projects/:id(.:format)
+Controller#Action | projects#update
+--[ Route 200 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /projects/:id(.:format)
+Controller#Action | projects#destroy
+--[ Route 201 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_issue
+Verb              | PATCH
+URI               | /issues/:id/edit(.:format)
+Controller#Action | issues#edit
+--[ Route 202 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | tab_issue
+Verb              | GET
+URI               | /issues/:id/tab/:name(.:format)
+Controller#Action | issues#issue_tab
+--[ Route 203 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | bulk_edit_issues
+Verb              | GET|POST
+URI               | /issues/bulk_edit(.:format)
+Controller#Action | issues#bulk_edit
+--[ Route 204 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | bulk_update_issues
+Verb              | POST|PATCH
+URI               | /issues/bulk_update(.:format)
+Controller#Action | issues#bulk_update
+--[ Route 205 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | issue_time_entries
+Verb              | POST
+URI               | /issues/:issue_id/time_entries(.:format)
+Controller#Action | timelog#create
+--[ Route 206 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_issue_time_entry
+Verb              | GET
+URI               | /issues/:issue_id/time_entries/new(.:format)
+Controller#Action | timelog#new
+--[ Route 207 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | issue_relations
+Verb              | GET
+URI               | /issues/:issue_id/relations(.:format)
+Controller#Action | issue_relations#index
+--[ Route 208 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /issues/:issue_id/relations(.:format)
+Controller#Action | issue_relations#create
+--[ Route 209 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | relation
+Verb              | GET
+URI               | /relations/:id(.:format)
+Controller#Action | issue_relations#show
+--[ Route 210 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /relations/:id(.:format)
+Controller#Action | issue_relations#destroy
+--[ Route 211 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | issues
+Verb              | GET
+URI               | /issues(.:format)
+Controller#Action | issues#index
+--[ Route 212 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /issues(.:format)
+Controller#Action | issues#create
+--[ Route 213 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_issue
+Verb              | GET
+URI               | /issues/new(.:format)
+Controller#Action | issues#new
+--[ Route 214 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /issues/:id/edit(.:format)
+Controller#Action | issues#edit
+--[ Route 215 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | issue
+Verb              | GET
+URI               | /issues/:id(.:format)
+Controller#Action | issues#show
+--[ Route 216 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /issues/:id(.:format)
+Controller#Action | issues#update
+--[ Route 217 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /issues/:id(.:format)
+Controller#Action | issues#update
+--[ Route 218 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /issues/:id(.:format)
+Controller#Action | issues#destroy
+--[ Route 219 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | issues_new
+Verb              | POST
+URI               | /issues/new(.:format)
+Controller#Action | issues#new
+--[ Route 220 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /issues(.:format)
+Controller#Action | issues#destroy
+--[ Route 221 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | queries
+Verb              | GET
+URI               | /queries(.:format)
+Controller#Action | queries#index
+--[ Route 222 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /queries(.:format)
+Controller#Action | queries#create
+--[ Route 223 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_query
+Verb              | GET
+URI               | /queries/new(.:format)
+Controller#Action | queries#new
+--[ Route 224 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_query
+Verb              | GET
+URI               | /queries/:id/edit(.:format)
+Controller#Action | queries#edit
+--[ Route 225 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | query
+Verb              | PATCH
+URI               | /queries/:id(.:format)
+Controller#Action | queries#update
+--[ Route 226 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /queries/:id(.:format)
+Controller#Action | queries#update
+--[ Route 227 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /queries/:id(.:format)
+Controller#Action | queries#destroy
+--[ Route 228 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | queries_filter
+Verb              | GET
+URI               | /queries/filter(.:format)
+Controller#Action | queries#filter
+--[ Route 229 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | news_index
+Verb              | GET
+URI               | /news(.:format)
+Controller#Action | news#index
+--[ Route 230 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /news(.:format)
+Controller#Action | news#create
+--[ Route 231 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_news
+Verb              | GET
+URI               | /news/new(.:format)
+Controller#Action | news#new
+--[ Route 232 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_news
+Verb              | GET
+URI               | /news/:id/edit(.:format)
+Controller#Action | news#edit
+--[ Route 233 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | news
+Verb              | GET
+URI               | /news/:id(.:format)
+Controller#Action | news#show
+--[ Route 234 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /news/:id(.:format)
+Controller#Action | news#update
+--[ Route 235 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /news/:id(.:format)
+Controller#Action | news#update
+--[ Route 236 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /news/:id(.:format)
+Controller#Action | news#destroy
+--[ Route 237 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /news/:id/comments(.:format)
+Controller#Action | comments#create
+--[ Route 238 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /news/:id/comments/:comment_id(.:format)
+Controller#Action | comments#destroy
+--[ Route 239 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | status_by_version
+Verb              | POST
+URI               | /versions/:id/status_by(.:format)
+Controller#Action | versions#status_by
+--[ Route 240 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_version
+Verb              | GET
+URI               | /versions/:id/edit(.:format)
+Controller#Action | versions#edit
+--[ Route 241 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | version
+Verb              | GET
+URI               | /versions/:id(.:format)
+Controller#Action | versions#show
+--[ Route 242 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /versions/:id(.:format)
+Controller#Action | versions#update
+--[ Route 243 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /versions/:id(.:format)
+Controller#Action | versions#update
+--[ Route 244 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /versions/:id(.:format)
+Controller#Action | versions#destroy
+--[ Route 245 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | add_attachment_document
+Verb              | POST
+URI               | /documents/:id/add_attachment(.:format)
+Controller#Action | documents#add_attachment
+--[ Route 246 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_document
+Verb              | GET
+URI               | /documents/:id/edit(.:format)
+Controller#Action | documents#edit
+--[ Route 247 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | document
+Verb              | GET
+URI               | /documents/:id(.:format)
+Controller#Action | documents#show
+--[ Route 248 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /documents/:id(.:format)
+Controller#Action | documents#update
+--[ Route 249 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /documents/:id(.:format)
+Controller#Action | documents#update
+--[ Route 250 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /documents/:id(.:format)
+Controller#Action | documents#destroy
+--[ Route 251 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | time_entries_context_menu
+Verb              | GET|POST
+URI               | /time_entries/context_menu(.:format)
+Controller#Action | context_menus#time_entries
+--[ Route 252 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_time_entry
+Verb              | PATCH
+URI               | /time_entries/:id/edit(.:format)
+Controller#Action | timelog#edit
+--[ Route 253 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | report_time_entries
+Verb              | GET
+URI               | /time_entries/report(.:format)
+Controller#Action | timelog#report
+--[ Route 254 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | bulk_edit_time_entries
+Verb              | GET
+URI               | /time_entries/bulk_edit(.:format)
+Controller#Action | timelog#bulk_edit
+--[ Route 255 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | bulk_update_time_entries
+Verb              | POST
+URI               | /time_entries/bulk_update(.:format)
+Controller#Action | timelog#bulk_update
+--[ Route 256 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | time_entries
+Verb              | GET
+URI               | /time_entries(.:format)
+Controller#Action | timelog#index
+--[ Route 257 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /time_entries(.:format)
+Controller#Action | timelog#create
+--[ Route 258 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_time_entry
+Verb              | GET
+URI               | /time_entries/new(.:format)
+Controller#Action | timelog#new
+--[ Route 259 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /time_entries/:id/edit(.:format)
+Controller#Action | timelog#edit
+--[ Route 260 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | time_entry
+Verb              | GET
+URI               | /time_entries/:id(.:format)
+Controller#Action | timelog#show
+--[ Route 261 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /time_entries/:id(.:format)
+Controller#Action | timelog#update
+--[ Route 262 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /time_entries/:id(.:format)
+Controller#Action | timelog#update
+--[ Route 263 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /time_entries/:id(.:format)
+Controller#Action | timelog#destroy {:id=>/\d+/}
+--[ Route 264 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | time_entries_destroy
+Verb              | DELETE
+URI               | /time_entries/destroy(.:format)
+Controller#Action | timelog#destroy
+--[ Route 265 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | time_entries_new
+Verb              | POST
+URI               | /time_entries/new(.:format)
+Controller#Action | timelog#new
+--[ Route 266 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | time_entries_bulk_edit
+Verb              | POST
+URI               | /time_entries/bulk_edit(.:format)
+Controller#Action | timelog#bulk_edit
+--[ Route 267 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | project_activity
+Verb              | GET
+URI               | /projects/:id/activity(.:format)
+Controller#Action | activities#index
+--[ Route 268 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | activity
+Verb              | GET
+URI               | /activity(.:format)
+Controller#Action | activities#index
+--[ Route 269 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/statistics(.:format)
+Controller#Action | repositories#stats
+--[ Route 270 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/graph(.:format)
+Controller#Action | repositories#graph
+--[ Route 271 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:id/repository/:repository_id/fetch_changesets(.:format)
+Controller#Action | repositories#fetch_changesets
+--[ Route 272 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revisions/:rev(.:format)
+Controller#Action | repositories#revision
+--[ Route 273 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revision(.:format)
+Controller#Action | repositories#revision
+--[ Route 274 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /projects/:id/repository/:repository_id/revisions/:rev/issues(.:format)
+Controller#Action | repositories#add_related_issue
+--[ Route 275 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /projects/:id/repository/:repository_id/revisions/:rev/issues/:issue_id(.:format)
+Controller#Action | repositories#remove_related_issue
+--[ Route 276 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revisions(.:format)
+Controller#Action | repositories#revisions
+--[ Route 277 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revisions/:rev/browse(/*path)(.:format)
+Controller#Action | repositories#browse {:format=>/html/, :path=>/.*/, :rev=>/[a-z0-9\.\-_]+/}
+--[ Route 278 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revisions/:rev/show(/*path)(.:format)
+Controller#Action | repositories#show {:format=>/html/, :path=>/.*/, :rev=>/[a-z0-9\.\-_]+/}
+--[ Route 279 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revisions/:rev/entry(/*path)(.:format)
+Controller#Action | repositories#entry {:format=>/html/, :path=>/.*/, :rev=>/[a-z0-9\.\-_]+/}
+--[ Route 280 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revisions/:rev/raw(/*path)(.:format)
+Controller#Action | repositories#raw {:format=>/html/, :path=>/.*/, :rev=>/[a-z0-9\.\-_]+/}
+--[ Route 281 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revisions/:rev/annotate(/*path)(.:format)
+Controller#Action | repositories#annotate {:format=>/html/, :path=>/.*/, :rev=>/[a-z0-9\.\-_]+/}
+--[ Route 282 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/browse(/*path)(.:format)
+Controller#Action | repositories#browse {:format=>/html/, :path=>/.*/}
+--[ Route 283 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/entry(/*path)(.:format)
+Controller#Action | repositories#entry {:format=>/html/, :path=>/.*/}
+--[ Route 284 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/raw(/*path)(.:format)
+Controller#Action | repositories#raw {:format=>/html/, :path=>/.*/}
+--[ Route 285 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/changes(/*path)(.:format)
+Controller#Action | repositories#changes {:format=>/html/, :path=>/.*/}
+--[ Route 286 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/annotate(/*path)(.:format)
+Controller#Action | repositories#annotate {:format=>/html/, :path=>/.*/}
+--[ Route 287 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/revisions/:rev/diff(/*path)
+Controller#Action | repositories#diff {:rev=>/[a-z0-9\.\-_]+/, :path=>/.*/}
+--[ Route 288 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/diff(/*path)
+Controller#Action | repositories#diff {:path=>/.*/}
+--[ Route 289 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id/show/*path(.:format)
+Controller#Action | repositories#show {:format=>/html/, :path=>/.*/}
+--[ Route 290 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository/:repository_id(.:format)
+Controller#Action | repositories#show
+--[ Route 291 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /projects/:id/repository(.:format)
+Controller#Action | repositories#show
+--[ Route 292 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | named_attachment
+Verb              | GET
+URI               | /attachments/:id/:filename(.:format)
+Controller#Action | attachments#show {:format=>/html/, :id=>/\d+/, :filename=>/.*/}
+--[ Route 293 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | download_named_attachment
+Verb              | GET
+URI               | /attachments/download/:id/:filename(.:format)
+Controller#Action | attachments#download {:id=>/\d+/, :filename=>/.*/}
+--[ Route 294 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /attachments/download/:id(.:format)
+Controller#Action | attachments#download {:id=>/\d+/}
+--[ Route 295 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | thumbnail
+Verb              | GET
+URI               | /attachments/thumbnail/:id(/:size)(.:format)
+Controller#Action | attachments#thumbnail {:id=>/\d+/, :size=>/\d+/}
+--[ Route 296 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | attachment
+Verb              | GET
+URI               | /attachments/:id(.:format)
+Controller#Action | attachments#show
+--[ Route 297 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /attachments/:id(.:format)
+Controller#Action | attachments#update
+--[ Route 298 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /attachments/:id(.:format)
+Controller#Action | attachments#update
+--[ Route 299 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /attachments/:id(.:format)
+Controller#Action | attachments#destroy
+--[ Route 300 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | object_attachments_edit
+Verb              | GET
+URI               | /attachments/:object_type/:object_id/edit(.:format)
+Controller#Action | attachments#edit_all
+--[ Route 301 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | object_attachments
+Verb              | PATCH
+URI               | /attachments/:object_type/:object_id(.:format)
+Controller#Action | attachments#update_all
+--[ Route 302 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | object_attachments_download
+Verb              | GET
+URI               | /attachments/:object_type/:object_id/download(.:format)
+Controller#Action | attachments#download_all
+--[ Route 303 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | group_memberships
+Verb              | GET
+URI               | /groups/:group_id/memberships(.:format)
+Controller#Action | principal_memberships#index
+--[ Route 304 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /groups/:group_id/memberships(.:format)
+Controller#Action | principal_memberships#create
+--[ Route 305 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_group_membership
+Verb              | GET
+URI               | /groups/:group_id/memberships/new(.:format)
+Controller#Action | principal_memberships#new
+--[ Route 306 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_group_membership
+Verb              | GET
+URI               | /groups/:group_id/memberships/:id/edit(.:format)
+Controller#Action | principal_memberships#edit
+--[ Route 307 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | group_membership
+Verb              | GET
+URI               | /groups/:group_id/memberships/:id(.:format)
+Controller#Action | principal_memberships#show
+--[ Route 308 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /groups/:group_id/memberships/:id(.:format)
+Controller#Action | principal_memberships#update
+--[ Route 309 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /groups/:group_id/memberships/:id(.:format)
+Controller#Action | principal_memberships#update
+--[ Route 310 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /groups/:group_id/memberships/:id(.:format)
+Controller#Action | principal_memberships#destroy
+--[ Route 311 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | autocomplete_for_user_group
+Verb              | GET
+URI               | /groups/:id/autocomplete_for_user(.:format)
+Controller#Action | groups#autocomplete_for_user
+--[ Route 312 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | groups
+Verb              | GET
+URI               | /groups(.:format)
+Controller#Action | groups#index
+--[ Route 313 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /groups(.:format)
+Controller#Action | groups#create
+--[ Route 314 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_group
+Verb              | GET
+URI               | /groups/new(.:format)
+Controller#Action | groups#new
+--[ Route 315 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_group
+Verb              | GET
+URI               | /groups/:id/edit(.:format)
+Controller#Action | groups#edit
+--[ Route 316 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | group
+Verb              | GET
+URI               | /groups/:id(.:format)
+Controller#Action | groups#show
+--[ Route 317 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /groups/:id(.:format)
+Controller#Action | groups#update
+--[ Route 318 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /groups/:id(.:format)
+Controller#Action | groups#update
+--[ Route 319 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /groups/:id(.:format)
+Controller#Action | groups#destroy
+--[ Route 320 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_group_users
+Verb              | GET
+URI               | /groups/:id/users/new(.:format)
+Controller#Action | groups#new_users {:id=>/\d+/}
+--[ Route 321 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | group_users
+Verb              | POST
+URI               | /groups/:id/users(.:format)
+Controller#Action | groups#add_users {:id=>/\d+/}
+--[ Route 322 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | group_user
+Verb              | DELETE
+URI               | /groups/:id/users/:user_id(.:format)
+Controller#Action | groups#remove_user {:id=>/\d+/}
+--[ Route 323 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | fields_trackers
+Verb              | GET|POST
+URI               | /trackers/fields(.:format)
+Controller#Action | trackers#fields
+--[ Route 324 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | trackers
+Verb              | GET
+URI               | /trackers(.:format)
+Controller#Action | trackers#index
+--[ Route 325 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /trackers(.:format)
+Controller#Action | trackers#create
+--[ Route 326 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_tracker
+Verb              | GET
+URI               | /trackers/new(.:format)
+Controller#Action | trackers#new
+--[ Route 327 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_tracker
+Verb              | GET
+URI               | /trackers/:id/edit(.:format)
+Controller#Action | trackers#edit
+--[ Route 328 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | tracker
+Verb              | PATCH
+URI               | /trackers/:id(.:format)
+Controller#Action | trackers#update
+--[ Route 329 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /trackers/:id(.:format)
+Controller#Action | trackers#update
+--[ Route 330 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /trackers/:id(.:format)
+Controller#Action | trackers#destroy
+--[ Route 331 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | update_issue_done_ratio_issue_statuses
+Verb              | POST
+URI               | /issue_statuses/update_issue_done_ratio(.:format)
+Controller#Action | issue_statuses#update_issue_done_ratio
+--[ Route 332 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | issue_statuses
+Verb              | GET
+URI               | /issue_statuses(.:format)
+Controller#Action | issue_statuses#index
+--[ Route 333 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /issue_statuses(.:format)
+Controller#Action | issue_statuses#create
+--[ Route 334 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_issue_status
+Verb              | GET
+URI               | /issue_statuses/new(.:format)
+Controller#Action | issue_statuses#new
+--[ Route 335 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_issue_status
+Verb              | GET
+URI               | /issue_statuses/:id/edit(.:format)
+Controller#Action | issue_statuses#edit
+--[ Route 336 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | issue_status
+Verb              | PATCH
+URI               | /issue_statuses/:id(.:format)
+Controller#Action | issue_statuses#update
+--[ Route 337 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /issue_statuses/:id(.:format)
+Controller#Action | issue_statuses#update
+--[ Route 338 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /issue_statuses/:id(.:format)
+Controller#Action | issue_statuses#destroy
+--[ Route 339 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | custom_field_enumerations
+Verb              | GET
+URI               | /custom_fields/:custom_field_id/enumerations(.:format)
+Controller#Action | custom_field_enumerations#index
+--[ Route 340 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /custom_fields/:custom_field_id/enumerations(.:format)
+Controller#Action | custom_field_enumerations#create
+--[ Route 341 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | custom_field_enumeration
+Verb              | PATCH
+URI               | /custom_fields/:custom_field_id/enumerations/:id(.:format)
+Controller#Action | custom_field_enumerations#update
+--[ Route 342 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /custom_fields/:custom_field_id/enumerations/:id(.:format)
+Controller#Action | custom_field_enumerations#update
+--[ Route 343 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /custom_fields/:custom_field_id/enumerations/:id(.:format)
+Controller#Action | custom_field_enumerations#destroy
+--[ Route 344 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /custom_fields/:custom_field_id/enumerations(.:format)
+Controller#Action | custom_field_enumerations#update_each
+--[ Route 345 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | custom_fields
+Verb              | GET
+URI               | /custom_fields(.:format)
+Controller#Action | custom_fields#index
+--[ Route 346 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /custom_fields(.:format)
+Controller#Action | custom_fields#create
+--[ Route 347 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_custom_field
+Verb              | GET
+URI               | /custom_fields/new(.:format)
+Controller#Action | custom_fields#new
+--[ Route 348 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_custom_field
+Verb              | GET
+URI               | /custom_fields/:id/edit(.:format)
+Controller#Action | custom_fields#edit
+--[ Route 349 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | custom_field
+Verb              | PATCH
+URI               | /custom_fields/:id(.:format)
+Controller#Action | custom_fields#update
+--[ Route 350 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /custom_fields/:id(.:format)
+Controller#Action | custom_fields#update
+--[ Route 351 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /custom_fields/:id(.:format)
+Controller#Action | custom_fields#destroy
+--[ Route 352 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | permissions_roles
+Verb              | GET
+URI               | /roles/permissions(.:format)
+Controller#Action | roles#permissions
+--[ Route 353 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /roles/permissions(.:format)
+Controller#Action | roles#update_permissions
+--[ Route 354 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | roles
+Verb              | GET
+URI               | /roles(.:format)
+Controller#Action | roles#index
+--[ Route 355 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /roles(.:format)
+Controller#Action | roles#create
+--[ Route 356 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_role
+Verb              | GET
+URI               | /roles/new(.:format)
+Controller#Action | roles#new
+--[ Route 357 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_role
+Verb              | GET
+URI               | /roles/:id/edit(.:format)
+Controller#Action | roles#edit
+--[ Route 358 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | role
+Verb              | GET
+URI               | /roles/:id(.:format)
+Controller#Action | roles#show
+--[ Route 359 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /roles/:id(.:format)
+Controller#Action | roles#update
+--[ Route 360 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /roles/:id(.:format)
+Controller#Action | roles#update
+--[ Route 361 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /roles/:id(.:format)
+Controller#Action | roles#destroy
+--[ Route 362 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | enumerations
+Verb              | GET
+URI               | /enumerations(.:format)
+Controller#Action | enumerations#index
+--[ Route 363 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /enumerations(.:format)
+Controller#Action | enumerations#create
+--[ Route 364 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_enumeration
+Verb              | GET
+URI               | /enumerations/new(.:format)
+Controller#Action | enumerations#new
+--[ Route 365 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_enumeration
+Verb              | GET
+URI               | /enumerations/:id/edit(.:format)
+Controller#Action | enumerations#edit
+--[ Route 366 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | enumeration
+Verb              | PATCH
+URI               | /enumerations/:id(.:format)
+Controller#Action | enumerations#update
+--[ Route 367 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /enumerations/:id(.:format)
+Controller#Action | enumerations#update
+--[ Route 368 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /enumerations/:id(.:format)
+Controller#Action | enumerations#destroy
+--[ Route 369 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /enumerations/:type(.:format)
+Controller#Action | enumerations#index
+--[ Route 370 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | search
+Verb              | GET
+URI               | (/projects/:id)/search(.:format)
+Controller#Action | search#index
+--[ Route 371 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | mail_handler
+Verb              | GET
+URI               | /mail_handler(.:format)
+Controller#Action | mail_handler#new
+--[ Route 372 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /mail_handler(.:format)
+Controller#Action | mail_handler#index
+--[ Route 373 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | admin
+Verb              | GET
+URI               | /admin(.:format)
+Controller#Action | admin#index
+--[ Route 374 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | admin_projects
+Verb              | GET
+URI               | /admin/projects(.:format)
+Controller#Action | admin#projects
+--[ Route 375 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | admin_plugins
+Verb              | GET
+URI               | /admin/plugins(.:format)
+Controller#Action | admin#plugins
+--[ Route 376 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | admin_info
+Verb              | GET
+URI               | /admin/info(.:format)
+Controller#Action | admin#info
+--[ Route 377 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | test_email
+Verb              | POST
+URI               | /admin/test_email(.:format)
+Controller#Action | admin#test_email
+--[ Route 378 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | admin_default_configuration
+Verb              | POST
+URI               | /admin/default_configuration(.:format)
+Controller#Action | admin#default_configuration
+--[ Route 379 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | try_connection_auth_source
+Verb              | GET
+URI               | /auth_sources/:id/test_connection(.:format)
+Controller#Action | auth_sources#test_connection
+--[ Route 380 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | autocomplete_for_new_user_auth_sources
+Verb              | GET
+URI               | /auth_sources/autocomplete_for_new_user(.:format)
+Controller#Action | auth_sources#autocomplete_for_new_user
+--[ Route 381 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | auth_sources
+Verb              | GET
+URI               | /auth_sources(.:format)
+Controller#Action | auth_sources#index
+--[ Route 382 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /auth_sources(.:format)
+Controller#Action | auth_sources#create
+--[ Route 383 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_auth_source
+Verb              | GET
+URI               | /auth_sources/new(.:format)
+Controller#Action | auth_sources#new
+--[ Route 384 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_auth_source
+Verb              | GET
+URI               | /auth_sources/:id/edit(.:format)
+Controller#Action | auth_sources#edit
+--[ Route 385 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | auth_source
+Verb              | GET
+URI               | /auth_sources/:id(.:format)
+Controller#Action | auth_sources#show
+--[ Route 386 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /auth_sources/:id(.:format)
+Controller#Action | auth_sources#update
+--[ Route 387 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /auth_sources/:id(.:format)
+Controller#Action | auth_sources#update
+--[ Route 388 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /auth_sources/:id(.:format)
+Controller#Action | auth_sources#destroy
+--[ Route 389 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_workflows
+Verb              | GET
+URI               | /workflows/edit(.:format)
+Controller#Action | workflows#edit
+--[ Route 390 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | workflows
+Verb              | PATCH
+URI               | /workflows/update(.:format)
+Controller#Action | workflows#update
+--[ Route 391 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | permissions_workflows
+Verb              | GET
+URI               | /workflows/permissions(.:format)
+Controller#Action | workflows#permissions
+--[ Route 392 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | update_permissions_workflows
+Verb              | PATCH
+URI               | /workflows/update_permissions(.:format)
+Controller#Action | workflows#update_permissions
+--[ Route 393 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | copy_workflows
+Verb              | GET
+URI               | /workflows/copy(.:format)
+Controller#Action | workflows#copy
+--[ Route 394 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | duplicate_workflows
+Verb              | POST
+URI               | /workflows/duplicate(.:format)
+Controller#Action | workflows#duplicate
+--[ Route 395 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /workflows(.:format)
+Controller#Action | workflows#index
+--[ Route 396 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | settings
+Verb              | GET
+URI               | /settings(.:format)
+Controller#Action | settings#index
+--[ Route 397 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | settings_edit
+Verb              | GET|POST
+URI               | /settings/edit(.:format)
+Controller#Action | settings#edit
+--[ Route 398 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | plugin_settings
+Verb              | GET|POST
+URI               | /settings/plugin/:id(.:format)
+Controller#Action | settings#plugin
+--[ Route 399 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | sys_projects
+Verb              | GET
+URI               | /sys/projects(.:format)
+Controller#Action | sys#projects
+--[ Route 400 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /sys/projects/:id/repository(.:format)
+Controller#Action | sys#create_project_repository
+--[ Route 401 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | sys_fetch_changesets
+Verb              | GET|POST
+URI               | /sys/fetch_changesets(.:format)
+Controller#Action | sys#fetch_changesets
+--[ Route 402 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | uploads
+Verb              | POST
+URI               | /uploads(.:format)
+Controller#Action | attachments#upload
+--[ Route 403 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | robots
+Verb              | GET
+URI               | /robots(.:format)
+Controller#Action | welcome#robots
